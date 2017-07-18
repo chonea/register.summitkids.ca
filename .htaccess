@@ -1,0 +1,23 @@
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+
+Options -Multiviews
+
+RewriteEngine On
+RewriteBase /
+
+# Force search engines to use register.summitkids.ca
+# RewriteCond %{HTTP_HOST} !^register\.summitkids\.ca$
+# RewriteRule ^(.*) http://register.summitkids.ca/$1 [R=301,L]
+
+# Specify search friendly URLs
+RewriteRule ^login$ /login/index.php [L]
+#RewriteRule ^login/create$ /login/register.php [L]
+#RewriteRule ^login/edit$ /login/edit.php [L]
+#RewriteRule ^login/reset$ /login/password_reset.php [L]
+#RewriteRule ^enroll$ /register.php [L]
+#RewriteRule ^enroll/print$ /print.php [L]
